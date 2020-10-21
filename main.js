@@ -11,7 +11,15 @@
 // cumin
 // cocoa
 
+let favoriteRecipe = {
+  title: "mole",
+  servings: 2,
+  ingredients: ["cinnamon", "cumin", "cocoa"]
+}
 
+console.log(favoriteRecipe.title);
+console.log(favoriteRecipe.servings);
+console.log(favoriteRecipe.ingredients);
 
 
 //Exercise #2
@@ -23,6 +31,17 @@
 // Now use an if/else statement to change the output depending on whether you read it
 // or not. If you read it, log a string like "You already read "1984" by George Orwell"
 // and vice versa
+
+let bookArray = [{ title: "Harry Potter and the Sorcerer's Stone", author: "J. K. Rowling", alreadyRead: true }, { title: "1984", author: "George Orwell", alreadyRead: true }, { title: "The Shawshank Redemption", author: "Stephen King", alreadyRead: false }];
+
+for (let i = 0; i < bookArray.length; i++) {
+  if (bookArray[i].alreadyRead === true) {
+    console.log(`You already read ${bookArray[i].title} by ${bookArray[i].author}`)
+  } else { 
+    console.log(`You did not read ${bookArray[i].title} by ${bookArray[i].author}`)
+  }
+}
+
 
 
 
@@ -42,7 +61,20 @@
 // Maybe your favorite came with an extended cut, including deleted scenes. 
 // Write a statement that increases your movie object's duration by 30 minutes. 
 
+const dieHard = {
+  title: "Die Hard",
+  director: "John McTiernan",
+  actors: ["Bruce Willis", "Bonnie Bedelia", "Alan Rickman"],
+  releaseYear: 1988,
+  duration: 132
+}
 
+console.log(dieHard.title);
+console.log(dieHard.director);
+console.log(dieHard.actors);
+console.log(dieHard.releaseYear);
+console.log(dieHard.duration);
+dieHard.duration = dieHard.duration + 30
 
 
 
@@ -53,7 +85,9 @@
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
 let arrayList = [1, 2, 3];
-
+ 
+console.log(typeof arrayList);
+console.log(Array.isArray(arrayList));
 
 //Exercise #5
 // Write a function countCharacters that, when given a string as an argument,
@@ -63,6 +97,20 @@ let arrayList = [1, 2, 3];
 // 
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
+
+function countCharacters(str) { //*******
+  let freq = {};
+
+  for (let i = 0; i <string.length; i++) {
+      let character = string.charAt(i);
+      if (freq[character]) {
+         freq[character]++;
+      } else {
+         freq[character] = 1;
+      }
+  }
+  return freq;
+}
 
 
 //Exercise #6
