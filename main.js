@@ -11,7 +11,18 @@
 // cumin
 // cocoa
 
+const favoriteRecipe = {
+  title: 'Lasagna',
+  servings: 3,
+  ingredients: ['lasagne', 'tomato sauce', 'parsley', 'beef', 'ricotta', 'mozarella']
+}
 
+console.log(favoriteRecipe.title)
+console.log(`Serves: ${favoriteRecipe.servings}`)
+
+for (item of favoriteRecipe.ingredients) {
+  console.log(item);
+}
 
 
 //Exercise #2
@@ -23,6 +34,31 @@
 // Now use an if/else statement to change the output depending on whether you read it
 // or not. If you read it, log a string like "You already read "1984" by George Orwell"
 // and vice versa
+
+const books = [{
+  title: 'Norwegian Wood',
+  author: 'Haruki Murakami',
+  alreadyRead: true
+},
+{
+  title: 'War and Peace',
+  author: 'Leo Tolstoy',
+  alreadyRead: false
+},
+{
+  title: 'The Fault in Our Stars',
+  author: 'John Green',
+  alreadyRead: true
+}
+]
+
+for (item of books) {
+  if (item.alreadyRead === true) {
+    console.log(`You already read ${item.title} by ${item.author}`);
+  } else {
+    console.log(`You haven't read ${item.title} by ${item.author}`);
+  }
+}
 
 
 
@@ -43,8 +79,18 @@
 // Write a statement that increases your movie object's duration by 30 minutes. 
 
 
+const favoriteMovie = {
+  title: 'The Life of Pi',
+  director: 'Ang Lee',
+  actors: ['Suraj Sharma', 'Irrfan Khan', 'Tabassum Fatima Hashmi'],
+  releaseYear: 2012,
+  duration: 127
+}
 
-
+console.log(favoriteMovie.title)
+console.log(favoriteMovie.director)
+console.log(favoriteMovie.releaseYear)
+console.log(favoriteMovie.duration + 30)
 
 
 //Exercise #4 
@@ -53,6 +99,8 @@
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
 let arrayList = [1, 2, 3];
+
+console.log(Array.isArray(arrayList))
 
 
 //Exercise #5
@@ -64,13 +112,22 @@ let arrayList = [1, 2, 3];
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
 
+const countCharacters = function (str) {
+  let obj = {}
+  let splitStr = str.split("");
+
+  for (item of splitStr) {
+  }
+}
+
+countCharacters('hello');
 
 //Exercise #6
 // Write a function that accepts two objects
 // as arguments and 
 // *extends* all of the key/value pairs of the second one to the first one
 // function extend(obj1, obj2) {
-  
+
 // }
 // extend({a: 1, c: 3}, {b: 2, c: 4}) => {a: 1, b:2, c:4}
 
