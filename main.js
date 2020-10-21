@@ -11,6 +11,22 @@
 // cumin
 // cocoa
 
+let recipe = {
+  title: `mole`,
+  servings: 10,
+  ingredients: [`chocolate`, `cummin`, `water`],
+  increasedServings: function(){
+    this.servings += 1;
+  }
+
+}
+console.log(recipe.title);
+console.log(recipe.servings);
+console.log(recipe.ingredients);
+recipe.increasedServings();
+console.log(recipe.servings);
+
+
 
 
 
@@ -24,6 +40,22 @@
 // or not. If you read it, log a string like "You already read "1984" by George Orwell"
 // and vice versa
 
+const book = [
+  { title: `1984`, author: `george orwell`, alreadyRead: true },
+  { title: `bible`, author: `god`, alreadyRead: false }
+];
+const loopBook = function (arr) {
+  for (let item of arr) {
+    if (item.alreadyRead) {
+      console.log(`you have already read ${item.title}, by ${item.author}`);
+    } else {
+      console.log(`you have not read ${item.title}, by ${item.author}`);
+    }
+    
+  }
+  
+}
+loopBook(book);
 
 
 //Exercise #3
@@ -42,7 +74,24 @@
 // Maybe your favorite came with an extended cut, including deleted scenes. 
 // Write a statement that increases your movie object's duration by 30 minutes. 
 
+const favMovie = {
+  title: `Vampires in the bronx`,
+  director: `osmany rodriguez`,
+  actors: [`zoe saldana`, `methodman`],
+  releaseYear: 2020,
+  duration: 86,
+  increaseDuration: function() {
+    this.duration += 30;
+  }
 
+}
+console.log(favMovie.title);
+console.log(favMovie.director);
+console.log(favMovie.actors);
+console.log(favMovie.releaseYear);
+console.log(favMovie.duration);
+favMovie.increaseDuration();
+console.log(favMovie.duration);
 
 
 
