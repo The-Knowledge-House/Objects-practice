@@ -87,8 +87,8 @@ console.log(`Extended Cut Duration: ${shawshank.extendedCut}`);
 // How do you check if an object is an array or not?
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
-// let arrayList = [1, 2, 3];
-// arrayList.isArray([1, 2, 3]);
+let arrayList = [1, 2, 3];
+console.log(Array.isArray(arrayList));
 
 //Exercise #5
 // Write a function countCharacters that, when given a string as an argument,
@@ -99,12 +99,6 @@ console.log(`Extended Cut Duration: ${shawshank.extendedCut}`);
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
 const countCharacters = function (str) {
-  // let letterCounter = {0};
-  // for (let i = 0; i < str.length; i++) {
-  //   if (str.charAt(i) === counter) {
-  //     return letterCounter + 1;
-  //   }
-  // } return letterCounter;
   return str.split("").reduce((total, letter) => {
     total[letter] ? total[letter]++ : (total[letter] = 1);
     return total;
@@ -121,16 +115,24 @@ console.log(countCharacters("hello"));
 // }
 // extend({a: 1, c: 3}, {b: 2, c: 4}) => {a: 1, b:2, c:4}
 
-let object1 = {
+object1 = {
   a: 1,
   b: 2,
   c: 3,
 };
 
-let object2 = {
+object2 = {
   c: 4,
   d: 5,
   e: 6,
 };
-let objefct3 = Object.assign(object1);
-function extend(obj1, obj2) {}
+// let objefct3 = Object.assign(object1, object2);
+function extend(obj1, obj2) {
+  for (let key in obj2) {
+    if (!obj1[key]) {
+      obj1[key] = obj2[key];
+    }
+  }
+  return obj1;
+}
+console.log(extend({ a: 1, c: 3 }, { b: 2, c: 4 }));
