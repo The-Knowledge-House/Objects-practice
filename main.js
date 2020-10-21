@@ -102,6 +102,16 @@ console.log(favMovie.duration);
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
 let arrayList = [1, 2, 3];
+function includes(container, value) {
+  let returnValue = false;
+  let pos = container.indexOf(value);
+  if (pos >= 0) {
+      returnValue = true;
+  }
+  return returnValue;
+}
+console.log(includes(arrayList));
+
 
 
 //Exercise #5
@@ -112,7 +122,19 @@ let arrayList = [1, 2, 3];
 // 
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
-
+const countCharacters = function (str) {
+  let letterCounter = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) === letterCounter) {
+      return letterCounter + 1;
+    }
+    return str.split("").reduce((total, letter) => {
+      total[letter] ? total[letter]++ : (total[letter] = 1);
+      return total;
+    }, {});
+  };
+}
+console.log(countCharacters("hello"));
 
 //Exercise #6
 // Write a function that accepts two objects
@@ -129,8 +151,15 @@ object1 = {
   c: 3
 };
 
-object2 = {
-  c: 4,
-  d: 5,
-  e: 6
-};
+  object2 = {
+    c: 4,
+    d: 5,
+    e: 6
+  };
+  function extend(a, b){
+    for(var key in b)
+        if(b.hasOwnProperty(key))
+            a[key] = b[key];
+    return a;
+  }
+  console.log(extend(object1,object2));
