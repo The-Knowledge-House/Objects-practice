@@ -102,17 +102,7 @@ console.log(favMovie.duration);
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
 let arrayList = [1, 2, 3];
-function includes(container, value) {
-  let returnValue = false;
-  let pos = container.indexOf(value);
-  if (pos >= 0) {
-      returnValue = true;
-  }
-  return returnValue;
-}
-console.log(includes(arrayList));
-
-
+Array.isArray(arrayList);
 
 //Exercise #5
 // Write a function countCharacters that, when given a string as an argument,
