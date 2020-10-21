@@ -11,6 +11,17 @@
 // cumin
 // cocoa
 
+const recipe = {
+
+title : "Mole",
+servings : 2,
+ingredients : ["cinnamon", "cumin", "cocoa"]
+}
+
+// console.log(recipe.title);
+// console.log(recipe.servings);
+// console.log(recipe.ingredients);
+
 
 
 
@@ -24,11 +35,25 @@
 // or not. If you read it, log a string like "You already read "1984" by George Orwell"
 // and vice versa
 
+const book = [
+  {title: `1984`, author: `George Orwell`, alreadyRead: true},
+  {title: `Bible`, author: `God`, alreadyRead: false}
+]; 
 
+const loopBook = function(arr) {
+  for (let item of arr) {
+    if (item.alreadyRead) {
+      console.log(`You already read ${item.title} by ${item.author}`) 
+    } else {
+      console.log(`You have not read ${item.title} by ${item.author}`)
+    }
+  }
+}
+loopBook(book);
 
 //Exercise #3
 //Create your object representing your favorite movie, like so
-// const shawshank = {
+// const shawshank : {
 //   title: 'Shawshank Redemption',
 //   director: 'Frank Darabont',
 //   actors: ['Tim Robbins', 'Morgan Freeman', 'Bob Gunton'],
@@ -43,7 +68,16 @@
 // Write a statement that increases your movie object's duration by 30 minutes. 
 
 
-
+let favMovie = {
+  title: `Vampires in the Bronx`,
+  director: `Osmany Rodriguez`,
+  actors: [`Zoe Zaldana`, `Method Man`],
+  releaseYear: 2020,
+  duration: 86,
+  increaseDuration () {
+    duration += 30
+  }
+}
 
 
 
