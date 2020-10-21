@@ -11,8 +11,17 @@
 // cumin
 // cocoa
 
+const favoriteRecipe = {
+  title: 'Lasagna',
+  servings: 3,
+  ingredients: ['lasagne', 'tomato sauce', 'parsley', 'beef', 'ricotta', 'mozarela'],
+}
+console.log(favoriteRecipe.title);
+console.log(`Serves: ${favoriteRecipe.servings}`)
 
-
+for (item of favoriteRecipe.ingredients) {
+  console.log(item);
+}
 
 //Exercise #2
 // Create an array of objects, where each object describes
@@ -24,7 +33,30 @@
 // or not. If you read it, log a string like "You already read "1984" by George Orwell"
 // and vice versa
 
+const books = [{
+  title: '1984',
+  author: 'George Orwell',
+  alreadyRead: true
+},
+{
+  title: 'Brave New World',
+  author: 'Audrey Huxley',
+  alreadyRead: false
+},
+{ title: 'Picture of Dorian Grey',
+  author: 'Oscar Wilde',
+  alreadyRead: true  
+}
+]
+// console.log(`${books[0].title} by ${books[0].author}`);
 
+for (item of books) {
+  if (item.alreadyRead === true) {
+    console.log(`You already read ${item.title} by ${item.author}`);
+  } else {
+    console.log(`You haven't read ${item.title} by ${item.author}`);
+  }
+}
 
 //Exercise #3
 //Create your object representing your favorite movie, like so
@@ -42,9 +74,18 @@
 // Maybe your favorite came with an extended cut, including deleted scenes. 
 // Write a statement that increases your movie object's duration by 30 minutes. 
 
+const favoriteMovie = {
+  title: 'The Life of Pi',
+  director: 'Ang Lee',
+  actors: ['Suraj Sharma', 'Irrfan Khan', 'Tabassum Fatima Hashmi'],
+  releaseYear: 2012, 
+  duration: 127,
+}
 
-
-
+console.log(favoriteMovie.title)
+console.log(favoriteMovie.director)
+console.log(favoriteMovie.releaseYear)
+console.log(favoriteMovie.duration + 30)
 
 
 //Exercise #4 
@@ -52,7 +93,10 @@
 // How do you check if an object is an array or not? 
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
+
 let arrayList = [1, 2, 3];
+
+console.log(Array.isArray(arrayList))
 
 
 //Exercise #5
@@ -63,6 +107,19 @@ let arrayList = [1, 2, 3];
 // 
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
+
+function countCharacters(str) {
+  let obj = {}
+  let splitStr = str.split("");
+
+  for (item of splitStr) {
+    obj.push(item);
+  }
+
+}
+
+countCharacters('hello');
+
 
 
 //Exercise #6
