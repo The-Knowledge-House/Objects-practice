@@ -11,8 +11,17 @@
 // cumin
 // cocoa
 
+const favoriteRecipe = {
+  title: 'lasagna',
+  servings: 3,
+  ingredients: ['lasagne', 'tomato sauce', 'parsely', 'beef', 'ricotta', 'mozzarella']
+}
+console.log(favoriteRecipe.title)
+console.log(`Serves: ${favoriteRecipe.servings}`)
 
-
+for (item of favoriteRecipe.ingredients) {
+  console.log(item);
+}
 
 //Exercise #2
 // Create an array of objects, where each object describes
@@ -24,6 +33,19 @@
 // or not. If you read it, log a string like "You already read "1984" by George Orwell"
 // and vice versa
 
+const books = [
+  { title: 'Norwegian Wood', author: 'Haruki Murakami', alreadyRead: true },
+  { title: 'War and Peace', author: 'Leo Tolstoy', alreadyRead: false },
+  { title: 'The fault in our stars', author: 'John Green', alreadyRead: true }
+]
+
+for (item of books) {
+  if (item.alreadyRead === true) {
+    console.log(`You already read ${item.title} by ${item.author}`)
+  } else {
+    console.log(`You haven't read ${item.title} by ${item.author}`)
+  }
+}
 
 
 //Exercise #3
@@ -42,7 +64,18 @@
 // Maybe your favorite came with an extended cut, including deleted scenes. 
 // Write a statement that increases your movie object's duration by 30 minutes. 
 
+const favoriteMovie = {
+  title: 'The life of Pi',
+  director: 'Ang Lee',
+  actors: ['Suraj Sharma', 'Irrfan Khan', 'Tabassum Fatima Hashmi'],
+  releaseYear: 2012,
+  duration: 127
+}
 
+console.log(favoriteMovie.title)
+console.log(favoriteMovie.director)
+console.log(favoriteMovie.releaseYear)
+console.log(`The extended cut is ${favoriteMovie.duration + 30} minutes long`)
 
 
 
@@ -54,6 +87,8 @@
 // That it is not an object
 let arrayList = [1, 2, 3];
 
+console.log(Array.isArray(arrayList))
+
 
 //Exercise #5
 // Write a function countCharacters that, when given a string as an argument,
@@ -64,13 +99,28 @@ let arrayList = [1, 2, 3];
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
 
+function countCharacters(str) {
+  let freq = {};
+  for (let i = 0; i < str.length; i++) {
+    let character = str.charAt(i);
+    if (freq[character]) {
+      freq[character]++;
+    } else {
+      freq[character] = 1;
+    }
+  }
+
+  return freq;
+};
+
+console.log(countCharacters("hello"))
 
 //Exercise #6
 // Write a function that accepts two objects
 // as arguments and 
 // *extends* all of the key/value pairs of the second one to the first one
 // function extend(obj1, obj2) {
-  
+
 // }
 // extend({a: 1, c: 3}, {b: 2, c: 4}) => {a: 1, b:2, c:4}
 
