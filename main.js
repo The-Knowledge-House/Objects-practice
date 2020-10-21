@@ -11,7 +11,10 @@
 // cumin
 // cocoa
 
-
+let Meal = {
+  Servings: 2,
+  Ingrediants: ['Cinnamon', 'Cumin', 'Cocoa',]
+}
 
 
 //Exercise #2
@@ -42,9 +45,22 @@
 // Maybe your favorite came with an extended cut, including deleted scenes. 
 // Write a statement that increases your movie object's duration by 30 minutes. 
 
+const movie = {
+  title: 'Face Off',
+  director: 'Johm Woo',
+  actors: ['John Travolta', 'Nicolas Cage', 'Gina Gershon'],
+  releaseYear: 1997,
+  duration: 139,
+  increaseDuration:function() {
+    this.duration += 30;
+  }
+}
 
-
-
+console.log('This movie is' + this.title);
+console.log('The directors name is' + this.director);
+console.log('This movie was released in' + this.releaseYear); 
+movie.increaseDuration();
+console.log(movie.duration);
 
 
 //Exercise #4 
@@ -74,14 +90,14 @@ let arrayList = [1, 2, 3];
 // }
 // extend({a: 1, c: 3}, {b: 2, c: 4}) => {a: 1, b:2, c:4}
 
-object1 = {
+ object1 {
   a: 1,
   b: 2,
   c: 3
 };
-
-object2 = {
-  c: 4,
-  d: 5,
-  e: 6
+ object2 {
+  d: 4,
+  e: 5,
+  f: 6
 };
+
