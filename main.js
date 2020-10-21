@@ -18,9 +18,9 @@ servings : 2,
 ingredients : ["cinnamon", "cumin", "cocoa"]
 }
 
-// console.log(recipe.title);
-// console.log(recipe.servings);
-// console.log(recipe.ingredients);
+ console.log(recipe.title);
+ console.log(recipe.servings);
+ console.log(recipe.ingredients);
 
 
 
@@ -69,17 +69,17 @@ loopBook(book);
 
 
 let favMovie = {
-  title: `Vampires in the Bronx`,
+  title: `Vampires vs. the Bronx`,
   director: `Osmany Rodriguez`,
   actors: [`Zoe Zaldana`, `Method Man`],
   releaseYear: 2020,
   duration: 86,
-  increaseDuration () {
-    duration += 30
+  increaseDuration() {
+    this.duration += 30;
   }
 }
 
-
+console.log(favMovie);
 
 //Exercise #4 
 //using the array provided below, 
@@ -87,6 +87,8 @@ let favMovie = {
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
 let arrayList = [1, 2, 3];
+
+console.log(Array.isArray(arrayList));
 
 
 //Exercise #5
@@ -97,6 +99,21 @@ let arrayList = [1, 2, 3];
 // 
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
+
+function countCharacters(string) {
+  let object = {};
+
+  split = string.split('');
+
+  for(let i=0; i < split.length; i++) {
+    if (object[split[i]] === undefined) {
+      object[split[i]] = 0;
+    }
+    object[split[i]]++;
+  } 
+  return object;
+}
+
 
 
 //Exercise #6
@@ -119,3 +136,14 @@ object2 = {
   d: 5,
   e: 6
 };
+
+function extender(obj1, obj2) {
+  for (let key in obj2) {
+    if (!obj1.hasOwnProperty(key) || obj1[key] < obj2[key]) {
+      obj1[key] = obj2[key];
+    }
+  }
+  return obj1;
+}
+
+extender(object1, object2);
