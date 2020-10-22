@@ -11,7 +11,8 @@
 // cumin
 // cocoa
 
-let Meal = {
+let Mole = {
+  Title: "Mole",
   Servings: 2,
   Ingrediants: ['Cinnamon', 'Cumin', 'Cocoa',]
 }
@@ -27,7 +28,23 @@ let Meal = {
 // or not. If you read it, log a string like "You already read "1984" by George Orwell"
 // and vice versa
 
+let books = [{
+  Title: "Flowers in the Attic",
+  Author: "V.C. Andrews",
+  alreadyRead: true,
+}, {
+  Title: "War and Peace",
+  Author: "Leo Tolstoy",
+  alreadyRead: false,
+}];
 
+for(let i = 0; i < books.length; i++) {
+  if (books[i].alreadyRead) {
+    console.log('You already read ' + books[i].Title)
+  }else{
+    console.log('I have not read ' + books[i].Title)
+  }
+}
 
 //Exercise #3
 //Create your object representing your favorite movie, like so
@@ -47,7 +64,7 @@ let Meal = {
 
 const movie = {
   title: 'Face Off',
-  director: 'Johm Woo',
+  director: 'John Woo',
   actors: ['John Travolta', 'Nicolas Cage', 'Gina Gershon'],
   releaseYear: 1997,
   duration: 139,
@@ -69,6 +86,10 @@ console.log(movie.duration);
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
 let arrayList = [1, 2, 3];
+Array.isArray(arrayList); 
+
+//console.log('are you an array? ' + Array.isArray(books));
+//Array.isArray() will check if an obj is an array or not.
 
 
 //Exercise #5
@@ -80,6 +101,39 @@ let arrayList = [1, 2, 3];
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
 
+function countCharacter(str){
+  let countCharObj = {}
+  for(let i = 0; i < str.length; i++) {
+      if(countCharObj[str.charAt(i)]) {
+          countCharObj[str.charAt(i)]++
+      } else {
+          countCharObj[str.charAt(i)] = 1
+      }
+  }
+  return countCharObj;
+}
+
+/*function countCharacter(str) {  //use a string with the variable countCharacter
+
+    let countCharObj = {}  //countCharObj is a new variable; going to be empty
+
+    for(let i = 0; i < str.length; i++) {  //let countCharObj start at the first obj; it has to be less than the length of the i; and your going to add one “over”
+
+if(countCharObj[str.charAt(i)]) {  //The charAt() method returns the character at the specified index in a string. The index of the first character is 0, the second character is 1, and so on. If the string exists, we're going to add one "over" as you mentioned earlier to the string
+
+            countCharObj[str.charAt(i)]++  //and it is going to keep adding on until it reaches the end of the string Here is where the adding is going to happen
+
+        } else { // If this character is not in the object list, we're going to create a new key in the object, and add "1" to it.
+
+            countCharObj[str.charAt(i)] = 1  //  Here is where we're adding the one to start off. 
+
+        }
+
+    }
+
+    return countCharObj; */
+
+
 
 //Exercise #6
 // Write a function that accepts two objects
@@ -90,14 +144,21 @@ let arrayList = [1, 2, 3];
 // }
 // extend({a: 1, c: 3}, {b: 2, c: 4}) => {a: 1, b:2, c:4}
 
- object1 {
+let object1 = {
   a: 1,
   b: 2,
-  c: 3
+  c: 3,
 };
- object2 {
-  d: 4,
-  e: 5,
-  f: 6
+let object2 = {
+  c: 4,
+  d: 5,
+  e: 6,
 };
+function extend(obj1, obj2) {
+  for(let key in obj2)
+      if(obj2.hasOwnProperty(key))
+          obj1[key] = obj2[key];
+  return obj1;
+}
 
+console.log(extend(object1,object2));
