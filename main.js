@@ -99,17 +99,17 @@ console.log(Array.isArray(arrayList));
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
 
 function countCharacters(str) { //*******
-  let freq = {};
+  let object = {};
 
-  for (let i = 0; i <string.length; i++) {
-      let character = string.charAt(i);
-      if (freq[character]) {
-         freq[character]++;
+  for (let i = 0; i <str.length; i++) {
+      let character = str.charAt(i);
+      if (object[character]) {
+         object[character]++;
       } else {
-         freq[character] = 1;
+         object[character] = 1;
       }
   }
-  return freq;
+  return object;
 }
 
 
@@ -133,3 +133,14 @@ object2 = {
   d: 5,
   e: 6
 };
+
+
+function extend(obj1, obj2) { //******
+  for(let key in obj2){
+    if(!obj1[key]){
+      obj1[key] = obj2[key]
+    }
+  }
+  return obj1
+}
+console.log(extend({a: 1, c: 3}, {b: 2, c: 4}))
