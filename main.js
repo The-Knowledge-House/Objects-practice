@@ -84,13 +84,15 @@ const favoriteMovie = {
   director: 'Ang Lee',
   actors: ['Suraj Sharma', 'Irrfan Khan', 'Tabassum Fatima Hashmi'],
   releaseYear: 2012,
-  duration: 127
+  duration: 127,
+  increaseDuraton() {
+    this.duration += 30;
+  }
 }
 
 console.log(favoriteMovie.title)
 console.log(favoriteMovie.director)
 console.log(favoriteMovie.releaseYear)
-console.log(favoriteMovie.duration + 30)
 
 
 //Exercise #4 
@@ -112,15 +114,19 @@ console.log(Array.isArray(arrayList))
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
 
-const countCharacters = function (str) {
-  let obj = {}
-  let splitStr = str.split("");
+let str = "hello";
 
-  for (item of splitStr) {
+const countCharacters = str => {
+  let obj = {};
+
+  for (letter of str.toLowerCase()) {
+    obj[letter] = str.match(new RegExp(letter, "g")).length;
   }
+
+  return obj;
 }
 
-countCharacters('hello');
+console.log(countCharacters(str))
 
 //Exercise #6
 // Write a function that accepts two objects
@@ -142,3 +148,10 @@ object2 = {
   d: 5,
   e: 6
 };
+
+
+const extend = (obj1, obj2) => {
+  return { ...obj1, ...obj2 }
+}
+
+console.log(extend(object1, object2));
