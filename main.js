@@ -11,6 +11,14 @@
 // cumin
 // cocoa
 
+const steakRecipe = {
+  title: 'Steak with Rosemary',
+  servings: 2,
+  ingredients: ['steak','butter','salt','pepper','rosemary'],
+
+};
+console.log(steakRecipe)
+
 
 
 
@@ -24,6 +32,29 @@
 // or not. If you read it, log a string like "You already read "1984" by George Orwell"
 // and vice versa
 
+const books = [{
+  title: 'The Bible',
+  author: 'God',
+  alreadyRead: false
+},
+{
+  title: 'The BFG',
+  author: 'Roald Dahl',
+  alreadyRead: true
+},
+{
+  title: 'Fantastic Mr. Fox',
+  author: 'Roald Dahl who is pretty much, God',
+  alreadyRead: true
+}];
+
+for(let obj in books){
+  if (books[obj].alreadyRead == true){
+    console.log(`You already read ${books[obj].title} by ${books[obj].author}.`)
+  }else{
+    console.log(`You need to read ${books[obj].title} by ${books[obj].author}.`)
+}
+}
 
 
 //Exercise #3
@@ -42,7 +73,18 @@
 // Maybe your favorite came with an extended cut, including deleted scenes. 
 // Write a statement that increases your movie object's duration by 30 minutes. 
 
-
+const favMovie = {
+  title: 'Pulp Fiction',
+  director: 'Quentin Tarantino',
+  actors: ['Samuel Jackson','Uma Thurman','Jon Travolta'],
+  releaseYear: 1994,
+  duration:154
+};
+console.log(favMovie.title)
+console.log(favMovie.director)
+console.log(favMovie.releaseYear)
+favMovie.duration += 30;
+console.log(favMovie.duration)
 
 
 
@@ -53,6 +95,8 @@
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
 let arrayList = [1, 2, 3];
+const arrayOrNah = Array.isArray(arrayList);
+console.log(arrayOrNah)
 
 
 //Exercise #5
@@ -64,7 +108,19 @@ let arrayList = [1, 2, 3];
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
 
-
+function countCharacters (str){
+  let occurenceCount = {};
+  for (let i = 0; i < str.length; i++){
+    let origin = str.charAt(i);
+    if (occurenceCount[origin]){
+      occurenceCount[origin]++
+    }else{
+      occurenceCount[origin] = 1 
+    }
+  }
+  console.log(occurenceCount)
+}
+countCharacters("Lasagna")
 //Exercise #6
 // Write a function that accepts two objects
 // as arguments and 
