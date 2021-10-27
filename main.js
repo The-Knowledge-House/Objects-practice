@@ -2,7 +2,7 @@
 // Create an object to hold information on your favorite recipe.
 //It should have properties for *title* (a string), *servings*(a number)
 // and *ingredients*(an array of strings)
-// On separate lines (one console.log statement for each), log the 
+// On separate lines (one console.log statement for each), log the
 //recipe information so it looks like:
 // Mole
 // Serves: 2
@@ -10,9 +10,17 @@
 // cinnamon
 // cumin
 // cocoa
-
-
-
+console.log('Exercise 1');
+const favoirteRecipe = {
+	title: 'mole',
+	servings: 2,
+	ingredients: [ 'cinnamon', 'cumin', 'cocoa' ]
+};
+console.log(favoirteRecipe.title);
+console.log(favoirteRecipe.servings);
+for (let i = 0; i < favoirteRecipe.ingredients.length; i++) {
+	console.log(favoirteRecipe.ingredients[i]);
+}
 
 //Exercise #2
 // Create an array of objects, where each object describes
@@ -23,65 +31,132 @@
 // Now use an if/else statement to change the output depending on whether you read it
 // or not. If you read it, log a string like "You already read "1984" by George Orwell"
 // and vice versa
-
-
-
+console.log('\nExercise 2');
+const arr = [
+	{
+		title: 'Moby-Dick',
+		author: 'Herman Melville',
+		alreadyRead: false
+	},
+	{
+		title: 'The Black Farm',
+		author: 'Elias Witherow',
+		alreadyRead: true
+	},
+	{
+		title: 'Asylum',
+		author: 'Madeleine Roux',
+		alreadyRead: true
+	},
+	{
+		title: 'Sanctum',
+		author: 'Madeleine Roux',
+		alreadyRead: true
+	},
+	{
+		title: 'Catacomb',
+		author: 'Madeleine Roux',
+		alreadyRead: false
+	}
+];
+haveIReadIt = (arr) => {
+	for (let i = 0; i < arr.length; i++) {
+		let book = `${arr[i].title} by ${arr[i].author}`;
+		if (arr[i].alreadyRead === true) {
+			console.log(`You've already read ` + book);
+		} else {
+			console.log(`You haven't read ` + book);
+		}
+	}
+};
+haveIReadIt(arr);
 //Exercise #3
 //Create your object representing your favorite movie, like so
 // const shawshank = {
 //   title: 'Shawshank Redemption',
 //   director: 'Frank Darabont',
 //   actors: ['Tim Robbins', 'Morgan Freeman', 'Bob Gunton'],
-//   releaseYear: 1994, 
+//   releaseYear: 1994,
 //   duration: 142
 // }
-// After you have crreated your movie object, print the title 
+// After you have crreated your movie object, print the title
 // of your movie using dot notation
 // Print the director's name
 // Print the release year
-// Maybe your favorite came with an extended cut, including deleted scenes. 
-// Write a statement that increases your movie object's duration by 30 minutes. 
+// Maybe your favorite came with an extended cut, including deleted scenes.
+// Write a statement that increases your movie object's duration by 30 minutes.
+console.log('\nExercise 3');
+const favoriteMovie = {
+	title: 'Rush Hour',
+	director: 'Brett Ratner',
+	actors: [ 'Jackie Chan', 'Chris Tucker' ],
+	releaseYear: 1998,
+	duration: 98
+};
+console.log(favoriteMovie.title);
+console.log(favoriteMovie.director);
+console.log(favoriteMovie.releaseYear);
+console.log(favoriteMovie.duration + 30);
 
-
-
-
-
-
-//Exercise #4 
-//using the array provided below, 
-// How do you check if an object is an array or not? 
+//Exercise #4
+//using the array provided below,
+// How do you check if an object is an array or not?
 // You are checking if arrayList is an array, assuming it were an object before testing it
 // That it is not an object
-let arrayList = [1, 2, 3];
-
-
+console.log('\nExercise 4');
+let arrayList = [ 1, 2, 3 ];
+console.log(Array.isArray(arrayList));
 //Exercise #5
 // Write a function countCharacters that, when given a string as an argument,
-// returns an object containing counts of the ocurrences of each character in 
+// returns an object containing counts of the ocurrences of each character in
 // the string
 // function countCharacters(){
-// 
+//
 //  }
 // countCharacters("hello"); => {"h": 1, "e": 1, "l": 2, "o": 1}
+console.log('\nExercise 5');
+countCharacters = (str) => {
+	console.log(`Your word ${str}`);
+	let arr = [];
+	let obj = {};
+	for (let i = 0; i < str.length; i++) {
+		arr.push(str[i]);
+		let counter = 1;
 
-
+		for (let j = 0; j < str.length; j++) {
+			if (arr[i] === arr[j] && i !== j) {
+				counter += 1;
+			}
+		}
+		obj[arr[i]] = counter;
+	}
+	return obj;
+};
+console.log(countCharacters('hello'));
+console.log(countCharacters('goodbye'));
 //Exercise #6
 // Write a function that accepts two objects
-// as arguments and 
+// as arguments and
 // *extends* all of the key/value pairs of the second one to the first one
 // function extend(obj1, obj2) {
-  
+
 // }
 // extend({a: 1, c: 3}, {b: 2, c: 4}) => {a: 1, b:2, c:4}
+console.log('\nExercise 6');
+extend = (obj1, obj2) => {
+	return Object.assign(obj1, obj2);
+};
 
 object1 = {
-  a: 1,
-  b: 2,
-  c: 3
+	a: 1,
+	b: 2,
+	c: 3
 };
 
 object2 = {
-  c: 4,
-  d: 5,
-  e: 6
+	c: 4,
+	d: 5,
+	e: 6
 };
+
+console.log(extend(object1, object2));
